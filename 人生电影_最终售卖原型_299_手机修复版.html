@@ -1,0 +1,81 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>人生电影｜V3</title><style>
+:root{--bg:#090908;--card:#15130f;--gold:#d6ad62;--text:#eee8dc;--muted:#9e978b;--line:#302a21}html{height:auto;min-height:100%;overflow-x:hidden;overflow-y:auto;-webkit-text-size-adjust:100%}body{min-height:100%;height:auto;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-y:auto}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -10%,#332515,#090908 45%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.75}.wrap{width:100%;max-width:760px;margin:auto;padding:18px 15px 100px;min-height:100%}.top{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;letter-spacing:.1em}.logo{color:#ead39a}.bar{height:3px;background:#28241e;margin:14px 0 22px}.bar i{display:block;height:100%;background:var(--gold)}.card,.chapter{background:linear-gradient(145deg,#181510,#100f0c);border:1px solid var(--line);border-radius:18px;padding:22px}.hero{min-height:520px;display:flex;flex-direction:column;justify-content:flex-end;background:radial-gradient(circle at 75% 22%,#6a4d2545,transparent 30%),linear-gradient(145deg,#1a1610,#090908)}h1,h2{font-family:Georgia,"Songti SC",serif;font-weight:500;line-height:1.35}h1{font-size:34px}.lead{color:#c8c0b2}.ey{font-size:11px;letter-spacing:.18em;color:var(--gold)}.btn{border:1px solid #55462d;background:#17130d;color:#f0d99b;border-radius:12px;padding:11px 15px;cursor:pointer}.primary{background:linear-gradient(135deg,#d6ad62,#9b7435);color:#130f09;border:0;font-weight:700}.actions{display:flex;justify-content:space-between;gap:10px;margin-top:18px}.right{display:flex;gap:9px}.q{font:500 25px/1.5 Georgia,"Songti SC",serif;margin:8px 0 20px}.opts{display:grid;gap:10px}.opt{background:#12110f;border:1px solid #2d2922;color:#ddd5c8;border-radius:14px;text-align:left;padding:15px 16px;cursor:pointer}.opt.sel{border-color:var(--gold);background:#d6ad6214}.opt b{color:#d8bb7c}.note{font-size:12px;color:#817a70}.history{margin-top:14px;border-top:1px solid var(--line);padding-top:14px}.history-title{display:flex;justify-content:space-between;align-items:center;color:#cfc5b3;font-size:13px}.history-list{display:grid;gap:7px;margin-top:9px}.history-item{display:grid;grid-template-columns:34px 1fr;gap:9px;background:#100f0d;border:1px solid #26221c;border-radius:10px;padding:8px 10px;cursor:pointer;text-align:left;color:#c8c0b5}.history-item .num{color:var(--gold)}.history-item .ans{color:#eee8dc}.poster{min-height:270px;border:1px solid #4a3a25;border-radius:18px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(145deg,#17130e,#57431f 48%,#090807);position:relative;overflow:hidden;margin-top:12px}.poster:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,#000c)}.poster>*{position:relative;z-index:1}.tag{align-self:flex-start;border:1px solid #e0c17b88;border-radius:99px;padding:4px 8px;color:#ecd79e;font-size:10px}.movie{font:36px/1.1 Georgia,serif}.sub{color:#d0c2aa}.chapter{margin-top:14px;overflow:visible;word-break:break-word}.chapter h2{font-size:22px;margin:0 0 12px}.chapter p{color:#cbc3b6}.quote{font:20px/1.6 Georgia,serif;color:#e6d3a9;border-left:2px solid var(--gold);padding-left:14px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mini{background:#11100e;border:1px solid #2a261f;border-radius:12px;padding:13px}.mini h3{font-size:14px;color:#ddc589;margin:0}.meter{height:6px;background:#27231d;border-radius:9px;margin:8px 0}.meter i{display:block;height:100%;background:linear-gradient(90deg,#806332,#e1c178)}.pay{margin:22px 0;padding:25px;text-align:center;border:1px solid #6b5530;border-radius:18px;background:#1a150d}.price{font:36px Georgia;color:#f0d99b}.small{font-size:12px;color:var(--muted)}@media(max-width:560px){h1{font-size:29px}.q{font-size:22px}.grid{grid-template-columns:1fr}.movie{font-size:30px}}
+</style></head><body><div class="wrap"><div id="app"></div></div><script>
+const D=['自由','成就','安全','关系','探索','当下'];
+const DESC={自由:'自己决定怎么生活，而不是被默认轨道推着走',成就:'把事情做好、变强，并获得真实的掌控感',安全:'有钱、有退路、有稳定底盘，不必一直担心明天',关系:'和重要的人保持真实、稳定、有质量的连接',探索:'去没去过的地方，试没试过的生活，允许人生变化',当下:'不把所有好生活都推迟到以后，认真过现在'};
+const Q=[
+['如果接下来一年，你不用考虑钱的问题，你第一反应会是什么？',[['先停下来，好好过一阵自己的生活','自由',1],['去做一件我一直想做、但总没开始的事','探索',1],['先把未来几年的底子打好，比如存钱、学习、规划','安全',1],['去见一些重要的人，或者和他们一起生活一段时间','关系',1]]],
+['如果现在有一份工作，工资不错、很稳定，但你就是不太喜欢，你会怎么想？',[['先做着，至少它给我选择其他生活的底气','安全',1],['如果越来越确定不喜欢，我还是会走','自由',1],['也许可以把它当跳板，先学到东西再说','成就',1],['我会先想想离开以后，自己的生活会不会受影响','关系',1]]],
+['你有没有过这种时候：别人都觉得“这样挺好的”，但你自己就是觉得哪里不对？',[['有，我最在意的是这是不是我自己想要的','自由',1],['有，我会觉得自己其实还能做得更好','成就',1],['有，但我通常会先忍一忍，因为现实也很重要','安全',1],['有，我会想是不是身边的人和生活方式不适合我','探索',1]]],
+['假如明天突然让你搬去一个完全陌生的城市，你最担心什么？',[['怕去了以后发现生活还是不是自己的','自由',1],['怕自己在那里没有发展起来','成就',1],['怕收入、住房、未来这些东西不稳','安全',1],['怕离开熟悉的人以后，会越来越疏远','关系',1]]],
+['你做一个很重要的决定时，通常最容易卡在哪里？',[['总觉得还有另一种人生没试过','探索',1],['怕自己选错以后，几年都白走了','成就',1],['会不停算最坏情况，想给自己留退路','安全',1],['会想到这个决定会不会影响别人','关系',1]]],
+['下面哪一种生活，最容易让你产生“我也想这样活”的感觉？',[['时间很自由，想去哪里就去哪里','自由',1],['有一件事情做得特别好，别人也认可我','成就',1],['不用为钱和未来焦虑，有自己的稳定生活','安全',1],['生活不一定很厉害，但每天都有真实的快乐和喜欢的人','当下',1]]],
+['如果你已经很久没有变化，你更可能怎么做？',[['换个环境，哪怕重新开始','探索',1],['给自己定个目标，重新往前冲','成就',1],['先不折腾，把眼前的生活稳住','安全',1],['找喜欢的人一起做点新的事情','关系',1]]],
+['假设你已经实现了一个很大的目标，第二天醒来，你最希望发现什么？',[['我终于可以按自己的方式生活了','自由',1],['我变成了自己以前想成为的那个人','成就',1],['以后很多事情不用再担心了','安全',1],['我终于有时间真正享受生活了','当下',1]]],
+['如果必须在“稳定但普通”和“未知但可能完全不同的人生”里选一个，你脑子里第一反应更接近？',[['未知。至少我想知道另一种人生是什么样','探索',1],['稳定。先有底盘，再谈其他','安全',1],['未知，只要这条路能让我变得更强','成就',1],['我会先想清楚，谁会和我一起走','关系',1]]],
+['如果很多年以后回头看，你最不希望自己后悔什么？',[['一直活在别人觉得“应该这样”的人生里','自由',1],['明明有能力，却没有认真做成过一件事','成就',1],['年轻时没有给自己建立足够的安全感','安全',1],['为了未来一直忙，最后却没好好生活、没好好陪重要的人','当下',1]]]
+];
+const MOVIES=[
+['《楚门的世界》','安全 × 自由','你可以观察一个很重要的问题：如果生活看起来很好，但剧本不是自己写的，你还会满足吗？'],
+['《白日梦想家》','探索 × 自由','它适合拿来问自己：我是在想象另一种人生，还是已经开始真正参与自己的生活？'],
+['《荒野生存》','自由 × 探索','它不是“自由就一定好”，而是把自由、孤独、远方和归属之间的矛盾放到最大。'],
+['《完美的日子》','当下 × 安全','它提供另一种镜子：普通、规律、安静的生活，能不能也是一种主动选择？'],
+['《小妇人》','关系 × 自由','可以观察个人理想、家庭关系和社会期待之间如何互相拉扯。'],
+['《伯德小姐》','自由 × 关系','它很适合观察“我想离开这里”和“我仍然在乎这里的人”如何同时成立。'],
+['《当幸福来敲门》','成就 × 安全','可以观察人在现实压力下，为什么仍然愿意为另一种生活持续投入。'],
+['《海街日记》','关系 × 当下','可以观察没有宏大目标时，日常生活和人与人的连接本身意味着什么。']
+];
+let S={page:'home',i:0,a:Array(Q.length).fill(null),unlock:false};try{S=JSON.parse(localStorage.getItem('LMV4'))||S}catch(e){};
+function save(){localStorage.setItem('LMV4',JSON.stringify(S))}
+function home(){S.page='home';save();render()}
+function start(){if(!Array.isArray(S.a)||S.a.length!==Q.length)S.a=Array(Q.length).fill(null);S.page='test';S.i=0;save();render()}
+function pick(j){S.a[S.i]=j;save();render()}
+function go(n){S.i=Math.max(0,Math.min(Q.length-1,S.i+n));save();render()}
+function jump(i){S.i=i;save();render()}
+function finish(){if(S.a.some(x=>x===null)){alert('还有题目没回答完。你可以从“答题记录”里直接跳回去补。');return}S.page='report';save();render()}
+function scores(){let z=Object.fromEntries(D.map(d=>[d,0]));S.a.forEach((v,i)=>{if(v!==null)z[Q[i][1][v][1]]++});return z}
+function history(){let answered=S.a.map((v,i)=>v===null?null:{i,ans:Q[i][1][v][0]}).filter(Boolean);if(!answered.length)return '';return `<div class="history"><div class="history-title"><span>答题记录</span><span class="small">点击任意一题可返回修改</span></div><div class="history-list">${answered.map(x=>`<button class="history-item" onclick="jump(${x.i})"><span class="num">${String(x.i+1).padStart(2,'0')}</span><span><b>${Q[x.i][0]}</b><br><span class="ans">${x.ans}</span></span></button>`).join('')}</div></div>`}
+function test(){let i=S.i,q=Q[i],done=S.a.filter(x=>x!==null).length;document.getElementById('app').innerHTML=`<div class="top"><span class="logo">LIFE MOVIE / TEST</span><span>${done} / ${Q.length} 已回答</span></div><div class="bar"><i style="width:${done/Q.length*100}%"></i></div><div class="card"><div class="ey">SCENE ${String(i+1).padStart(2,'0')}</div><div class="q">${q[0]}</div><div class="opts">${q[1].map((o,j)=>`<button class="opt ${S.a[i]===j?'sel':''}" onclick="pick(${j})"><b>${String.fromCharCode(65+j)}</b>　${o[0]}</button>`).join('')}</div><p class="note">没有正确答案。第一反应通常比“我应该怎么选”更有价值。</p><div class="actions"><button class="btn" onclick="go(-1)" ${i===0?'disabled':''}>← 上一题</button><div class="right">${i===Q.length-1?'<button class="btn primary" onclick="finish()">生成我的人生电影</button>':'<button class="btn primary" onclick="go(1)">下一题 →</button>'}</div></div>${history()}</div>`}
+function report(){
+ let z=scores(),sort=[...D].sort((a,b)=>z[b]-z[a]),top=sort[0],second=sort[1],low=sort[5];
+ let title={自由:'还没有散场的人生',成就:'向更高处走的人',安全:'给自己留一条退路',关系:'有人同行的远方',探索:'还想去更远的地方',当下:'别把生活推迟到以后'}[top];
+ let intro={自由:'你真正敏感的不是“自由”两个字，而是选择权。一旦你感觉人生正在被默认轨道替你决定，你的抵触会明显增加。',成就:'你很在意“我有没有真的做成”。对你来说，努力如果没有形成能力、结果或成长，很容易让你觉得时间被浪费了。',安全:'你并不一定保守。你只是很清楚，没有底盘的选择会让人付出更高代价，所以你会本能地先给自己留退路。',关系:'你做决定时，很难把自己和重要的人完全分开考虑。对你来说，人生不是单人项目。',探索:'你对“另一种可能的人生”比较敏感。长期没有变化，会让你产生一种生活正在变窄的感觉。',当下:'你不太愿意把所有快乐都延期。即使有目标，你仍然会在意今天过得有没有真实感。'}[top];
+ let movies=MOVIES.map(m=>{let sc=0;m[1].split(' × ').forEach(x=>sc+=z[x]||0);return {...m,sc}}).sort((a,b)=>b.sc-a.sc);
+ let tension=`${top} × ${low}`;
+ let answers=S.a.map((v,i)=>Q[i][1][v][0]);
+ let answeredList=answers.map((a,i)=>`<li><b>第${i+1}题</b>：${a}</li>`).join('');
+ if(!S.unlock){
+ document.getElementById('app').innerHTML=`<div class="top"><span class="logo">LIFE MOVIE / YOUR PREVIEW</span><span>10题完成</span></div>
+ <div class="poster"><span class="tag">YOUR LIFE MOVIE</span><div><div class="movie">《${title}》</div><div class="sub">${top} × ${second}</div></div></div>
+ <div class="chapter"><div class="ey">01 · 先给你看一段</div><h2>你不是一个“类型”，你更像处在一个选择期。</h2><p class="quote">${intro}</p><p>从你的答案看，你最在意的是<strong>${DESC[top]}</strong>，其次是<strong>${DESC[second]}</strong>。真正值得注意的是：你的${top}和${low}同时存在，所以很多决定才会显得难。</p></div>
+ <div class="chapter"><div class="ey">02 · 你的电影镜子</div><h2>你可能会在这些电影里看到某一部分自己</h2><p>不是说你等于电影里的角色，而是这些电影分别把某一种人生冲突放大了。</p>${movies.slice(0,2).map(m=>`<div class="poster"><span class="tag">REAL FILM / MIRROR</span><div><div class="movie">${m[0]}</div><div class="sub">${m[1]}<br>${m[2]}</div></div></div>`).join('')}</div>
+ <div class="chapter pay"><div class="ey">FULL REPORT · ¥2.99</div><h2>还有一部分，是只属于你的。</h2><p>完整报告会根据你的10个具体选择，继续写下：</p><ul><li>你现在正处于人生的哪一幕</li><li>你真正想要什么，以及不愿拿什么交换</li><li>你的选择模式</li><li>你最难处理的核心矛盾</li><li>别人看到的你 vs 真实的你</li><li>你最容易错过的东西</li><li>两条平行人生，以及各自的代价</li><li>三个现实人生情境</li><li>最容易后悔的选择</li><li>你的隐藏结局与电影终章</li></ul><div class="paybox"><div class="price">¥2.99</div><div class="small">一次购买 · 解锁完整人生电影</div><button class="btn primary" onclick="unlockReport()">模拟支付 ¥2.99 →</button></div></div>
+ <div class="nav"><button class="btn" onclick="jump(9)">← 返回修改答案</button></div>`;
+ return; }
+ document.getElementById('app').innerHTML=`<div class="top"><span class="logo">LIFE MOVIE / FULL REPORT</span><span>已解锁</span></div>
+ <div class="poster"><span class="tag">PERSONAL ARCHIVE</span><div><div class="movie">《${title}》</div><div class="sub">${top} × ${second}<br>这不是预测未来，而是把你已经做出的选择，放回同一部电影里。</div></div></div>
+ <div class="chapter"><div class="ey">01 · 你现在正处于哪一幕</div><h2>你正在从“接受剧本”走向“重新选择”。</h2><p>${intro}</p><p>你现在更像处在一个“意识已经先于行动发生变化”的阶段。生活未必糟糕到必须逃走，但你开始越来越清楚：有些东西即使别人觉得不错，也未必适合你。</p><p>这不是简单的迷茫。更准确地说，你已经开始重新审视自己的生活剧本。</p></div>
+ <div class="chapter"><div class="ey">02 · 你真正想要的东西</div><h2>${DESC[top]}，只是第一层。</h2><p>从你的选择来看，${top}是最明显的一条线，但真正重要的是它和${second}同时存在。你并不是只想要一种东西。你想要的是一种不会让自己长期委屈的生活。</p><p>${top==='自由'?'对你来说，钱、工作、地点甚至关系的意义，最后都会落到一个问题：我有没有选择的余地？':top==='成就'?'你需要的不只是“过得不错”，而是知道自己确实做成过一些重要的事情。':top==='安全'?'你希望未来不是完全不可预测的，你需要知道自己至少有一个可以回去的地方。':top==='关系'?'你真正珍惜的是那些让你不用解释太多的人，以及有人和你一起经历生活。':top==='探索'?'新鲜感对你不是单纯的刺激，而是确认自己还在成长。':'你希望生活里有一些不需要证明给别人看的时间。'}</p><p>所以如果有人只用一个词概括你，反而会漏掉最重要的部分。</p></div>
+ <div class="chapter"><div class="ey">03 · 你的选择模式</div><h2>你不是在选答案，你其实一直在算代价。</h2><p>你的回答里反复出现一个特点：你很少只看“我想不想”，还会同时考虑“选了以后会失去什么”。这会让你比一些人更谨慎，也会让你更容易把一个决定在脑子里演很多遍。</p><p>它的好处是，你不容易被短期情绪完全带走；代价是，如果一直等到所有风险都能解释清楚，你可能会错过本来需要先走一步才能知道答案的事情。</p><p><strong>你真正需要练习的不是更快做决定，而是知道哪些问题必须想清楚，哪些问题只能走出去以后才会有答案。</strong></p></div>
+ <div class="chapter"><div class="ey">04 · 你人生里最难处理的矛盾</div><h2>${tension}</h2><p>你想要${top}，但又不愿轻易失去${low}。这比单纯说“你喜欢自由/你追求稳定”更接近你的选择逻辑。</p><p>所以你真正面对的不是“勇敢还是不勇敢”，而是：为了${top}，你愿意承担多少${low}的不确定？为了${low}，你又愿意暂时放弃多少${top}？</p><p>一个比“我到底该不该做”更有用的问题是：</p><p class="quote"><strong>我的最低安全线在哪里？我的最低自由线又在哪里？</strong></p></div>
+ <div class="chapter"><div class="ey">05 · 别人看到的你 vs 真实的你</div><h2>别人可能只看到你的选择，看不到你为什么这么选。</h2><p>别人可能会觉得你${top==='自由'?'有自己的想法、不太愿意被管':top==='成就'?'有目标、对自己要求高':top==='安全'?'谨慎、稳妥':top==='关系'?'好相处、会考虑别人':top==='探索'?'想法多、总在找新的可能':'比较在意生活感'}。</p><p>但真实的你可能比这个印象复杂。你并不是简单地喜欢或不喜欢某种生活。你真正敏感的是：<strong>这是不是我主动选择的。</strong></p><p>如果是，即使辛苦，你也可能愿意；如果不是，即使看起来很好，你也可能慢慢失去兴趣。</p></div>
+ <div class="chapter"><div class="ey">06 · 你最容易错过的东西</div><h2>不是大机会，而是“小幅度改剧本”的机会。</h2><p>你容易把人生变化理解成一次很大的决定：换工作、换城市、重新开始。但很多时候，真正改变人生的是一些没那么戏剧性的动作——提前准备一项能力、存下一笔选择基金、认识一群新的人、每周留出一段不被别人安排的时间。</p><p>如果你总在等待“真正改变人生的那一天”，今天就很容易被忽略。</p><p><strong>你可以不立刻推翻人生，但可以先把下一幕的选择权拿回来一点。</strong></p></div>
+ <div class="chapter"><div class="ey">07 · 平行人生</div><h2>不是哪条路更好，而是哪种代价你愿意承担。</h2><div class="mini"><h3>A｜留在现在的轨道</h3><p>你得到的是连续性、熟悉感和较低的切换成本。真正需要警惕的不是“留下”，而是把留下变成从来没有重新选择过。</p></div><div class="mini"><h3>B｜换一条完全不同的轨道</h3><p>你得到的是新的可能、身份和环境，但同时会付出适应成本，也会发现新生活并不会自动解决所有旧问题。</p></div><p>所以这里没有标准答案。真正的问题是：<strong>哪一种代价，是你愿意主动承担的？</strong></p></div>
+ <div class="chapter"><div class="ey">08 · 三个现实人生情境</div><h2>当人生真的把选择摆到你面前</h2><p><strong>机会，但不稳定：</strong>先写出自己绝对不能失守的底线，再决定能不能冒险。不要用“我要不要勇敢”替代具体计算。</p><p><strong>稳定，但不喜欢：</strong>可以暂时留下，但给它一个期限和目的——攒钱、学技能、换赛道，而不是无限延期。</p><p><strong>重要的人和个人目标冲突：</strong>不要急着把它变成二选一。有时真正需要谈的是时间、距离、节奏和边界。</p></div>
+ <div class="chapter"><div class="ey">09 · 你最容易后悔的选择</div><h2>可能不是失败，而是一直没有真正试过。</h2><p>你最容易留下的遗憾，可能不是“我做错了”，而是“我当时明明很想试，为什么一直没有开始”。因为失败至少会留下经验，而长期推迟会留下一个很难验证的问题：如果当时我去了呢？</p><p>这并不意味着所有冲动都值得执行。真正值得警惕的是把“风险”无限放大，把“等待”包装成理性。</p></div>
+ <div class="chapter"><div class="ey">10 · 你的电影地图</div><h2>去这些电影里找“自己”，但不要找一个标准答案。</h2><p>这些都是真实存在的电影。你不需要寻找一个和自己一模一样的角色，只需要观察：哪一种冲突让你停下来想了一会儿？</p>${movies.slice(0,3).map(m=>`<div class="poster"><span class="tag">REAL FILM / MIRROR</span><div><div class="movie">${m[0]}</div><div class="sub">${m[1]}<br>${m[2]}</div></div></div>`).join('')}</div>
+ <div class="chapter"><div class="ey">11 · 你的隐藏结局</div><h2>你真正想要的可能不是一个“成功结局”。</h2><p>你更在意的是有一天回头看时，可以很确定地说：<strong>这确实是我自己选的。</strong></p><p>如果未来的你过得很好，但那套生活完全不是自己想要的，你未必会满足。反过来，如果一条路很辛苦，但你知道为什么走，也知道自己正在换取什么，你可能反而更能接受。</p><p>所以你的隐藏结局更接近：<strong>把人生的解释权拿回来。</strong></p></div>
+ <div class="chapter"><div class="ey">12 · AI 为你写的电影终章</div><h2>下一幕还没有被写死。</h2><p>多年以后，你可能会重新想起现在这个还在犹豫的自己。</p><p>那时候你已经知道，有些路并没有想象中那么遥远，有些答案也没有当初那么绝对。</p><p>你会发现，人生并不是在某一天突然变成另一部电影。真正的变化通常很安静：你开始少问一点“别人觉得怎么样”，多问一句“如果这是我的人生，我愿不愿意？”</p><p>镜头慢慢拉远。</p><p>没有字幕告诉观众你最终成了什么样的人。</p><p>因为这部电影真正重要的部分，从来不是结局。</p><p class="quote"><strong>而是你终于开始自己写下一幕。</strong></p></div>
+ <div class="chapter"><div class="ey">附录 · 这是你刚才的选择</div><p>这部分会保留你的原始回答，让报告不是一篇脱离你的模板文章。</p><ul>${answeredList}</ul></div>
+ <div class="nav"><button class="btn" onclick="window.print()">打印 / 保存 PDF</button><button class="btn" onclick="S.unlock=false;save();render()">回看免费预览</button></div>
+ <div class="footer">人生电影是一份自我探索产品，不是心理诊断，也不预测未来。</div>`;
+}
+function render(){if(S.page==='home'){document.getElementById('app').innerHTML=`<div class="card hero"><div><div class="ey">LIFE MOVIE / SELF EXPLORATION</div><h1>如果你的人生是一部电影，<br>你现在演到哪一幕？</h1><p class="lead">这不是人格测试，也不是预测未来。<br>用 10 个更接近真实生活的问题，看看你做选择时真正保护的是什么。</p><button class="btn primary" onclick="start()">开始我的人生电影 →</button><p class="small">约 3–5 分钟 · 手机电脑都能用 · 可随时返回修改 · 自动保存答题记录</p></div></div>`}else if(S.page==='test')test();else report()}
+render();
+
+function unlockReport(){
+  S.unlock=true; save();
+  render();
+  window.scrollTo({top:0,left:0,behavior:"smooth"});
+}
+</script></body></html>
